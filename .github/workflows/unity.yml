@@ -102,7 +102,7 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: test-project/Library
+          path: unity/Library
           key: Library-test-project-${{ matrix.targetPlatform }}
           restore-keys: |
             Library-test-project-
@@ -112,7 +112,7 @@ jobs:
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
         with:
-          projectPath: test-project
+          projectPath: unity
           testMode: editmode
 
       # Upload artifact
@@ -133,7 +133,7 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: test-project/Library
+          path: unity/Library
           key: Library-test-project-${{ matrix.targetPlatform }}
           restore-keys: |
             Library-test-project-
@@ -143,7 +143,7 @@ jobs:
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
         with:
-          projectPath: test-project
+          projectPath: unity
           testMode: playmode
 
       # Upload artifact
@@ -164,7 +164,7 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: test-project/Library
+          path: unity/Library
           key: Library-test-project-${{ matrix.targetPlatform }}
           restore-keys: |
             Library-test-project-
@@ -174,7 +174,7 @@ jobs:
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
         with:
-          projectPath: test-project
+          projectPath: unity
           testMode: all
 
       # Upload artifacts
@@ -194,7 +194,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - test-project
+          - unity
         unityVersion:
           - 2019.2.11f1
         targetPlatform:
