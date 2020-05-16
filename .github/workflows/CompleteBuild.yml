@@ -24,14 +24,6 @@ jobs:
           - StandaloneWindows # Build a Windows standalone.
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
           - StandaloneLinux64 # Build a Linux 64-bit standalone.
-          - iOS # Build an iOS player.
-          - Android # Build an Android .apk standalone app.
-          - WebGL # WebGL.
-          - WSAPlayer # Build an Windows Store Apps player.
-          - PS4 # Build a PS4 Standalone.
-          - XboxOne # Build a Xbox One Standalone.
-          - tvOS # Build to Apple's tvOS platform.
-          - Switch # Build a Nintendo Switch player.
     steps:
       - uses: actions/checkout@v2
         with:
@@ -43,7 +35,7 @@ jobs:
           restore-keys: |
             Library-${{ matrix.projectPath }}-
             Library-
-      - uses: webbertakken/unity-builder@v0.11
+      - uses: webbertakken/unity-builder@v0.15
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
