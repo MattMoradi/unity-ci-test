@@ -22,7 +22,7 @@ jobs:
       - uses: actions/cache@v1.1.0
         with:
           path: unity/Library
-          key: Library-test-project-WebGL
+          key: Library-unity-WebGL
 
       # Test
       - name: Run tests
@@ -103,11 +103,10 @@ jobs:
       - uses: actions/cache@v1.1.0
         with:
           path: unity/Library
-          key: Library-test-project-${{ matrix.targetPlatform }}
+          key: Library-unity-${{ matrix.targetPlatform }}
           restore-keys: |
-            Library-test-project-
+            Library-unity-
             Library-
-
       # Configure test runner
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
@@ -134,11 +133,10 @@ jobs:
       - uses: actions/cache@v1.1.0
         with:
           path: unity/Library
-          key: Library-test-project-${{ matrix.targetPlatform }}
+          key: Library-unity-${{ matrix.targetPlatform }}
           restore-keys: |
-            Library-test-project-
+            Library-unity-
             Library-
-
       # Configure test runner
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
@@ -165,11 +163,10 @@ jobs:
       - uses: actions/cache@v1.1.0
         with:
           path: unity/Library
-          key: Library-test-project-${{ matrix.targetPlatform }}
+          key: Library-unity-${{ matrix.targetPlatform }}
           restore-keys: |
-            Library-test-project-
+            Library-unity-
             Library-
-
       # Configure test runner
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
