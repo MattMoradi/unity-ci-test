@@ -1,4 +1,4 @@
-name: Just Build Already
+name: Build Unity
 
 on:
   push
@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: Manual Activation File
-          path: unity
+          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
 
   build:
     runs-on: ubuntu-latest
