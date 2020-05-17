@@ -1,4 +1,4 @@
-name: Complete Build
+name: Complete Example
 
 on:
   pull_request: {}
@@ -18,7 +18,7 @@ jobs:
           - buildme
         unityVersion:
           - 2019.2.11f1
-          - 2019.3.0f1
+          #- 2019.3.0f1
         targetPlatform:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows # Build a Windows standalone.
