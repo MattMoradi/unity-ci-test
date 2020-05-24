@@ -21,21 +21,21 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: buildme/Library
-          key: Library-buildme-WebGL
+          path: test-project/Library
+          key: Library-test-project-WebGL
 
       # Test
       - name: Run tests
         uses: webbertakken/unity-test-runner@v1.3
         with:
-          projectPath: buildme
+          projectPath: test-project
           unityVersion: 2019.2.11f1
 
       # Build
       - name: Build project
-        uses: webbertakken/unity-builder@v0.11
+        uses: webbertakken/unity-builder@v0.10
         with:
-          projectPath: buildme
+          projectPath: test-project
           unityVersion: 2019.2.11f1
           targetPlatform: WebGL
 
@@ -102,16 +102,16 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: buildme/Library
-          key: Library-buildme-${{ matrix.targetPlatform }}
+          path: test-project/Library
+          key: Library-test-project-${{ matrix.targetPlatform }}
           restore-keys: |
-            Library-buildme-
+            Library-test-project-
             Library-
       # Configure test runner
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
         with:
-          projectPath: buildme
+          projectPath: test-project
           testMode: editmode
 
       # Upload artifact
@@ -132,16 +132,16 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: buildme/Library
-          key: Library-buildme-${{ matrix.targetPlatform }}
+          path: test-project/Library
+          key: Library-test-project-${{ matrix.targetPlatform }}
           restore-keys: |
-            Library-buildme-
+            Library-test-project-
             Library-
       # Configure test runner
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
         with:
-          projectPath: buildme
+          projectPath: test-project
           testMode: playmode
 
       # Upload artifact
@@ -162,16 +162,16 @@ jobs:
       # Cache
       - uses: actions/cache@v1.1.0
         with:
-          path: buildme/Library
-          key: Library-buildme-${{ matrix.targetPlatform }}
+          path: test-project/Library
+          key: Library-test-project-${{ matrix.targetPlatform }}
           restore-keys: |
-            Library-buildme-
+            Library-test-project-
             Library-
       # Configure test runner
       - uses: webbertakken/unity-test-runner@v1.3
         id: testRunner
         with:
-          projectPath: buildme
+          projectPath: test-project
           testMode: all
 
       # Upload artifacts
@@ -191,7 +191,7 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - buildme
+          - test-project
         unityVersion:
           - 2019.2.11f1
         targetPlatform:
@@ -220,7 +220,7 @@ jobs:
         with:
           name: Test results (all modes)
           path: ${{ steps.testRunner.outputs.artifactsPath }}
-      - uses: webbertakken/unity-builder@v0.11
+      - uses: webbertakken/unity-builder@v0.10
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}

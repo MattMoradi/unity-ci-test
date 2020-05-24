@@ -1,6 +1,6 @@
 ﻿using System;
 
-publidc class BasicCounter
+public class BasicCounter
 {
   public const int MaxCount = 10;
 

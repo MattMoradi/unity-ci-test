@@ -15,10 +15,10 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - buildme
+          - test-project
         unityVersion:
           - 2019.2.11f1
-          #- 2019.3.0f1
+          - 2019.3.14f1
         targetPlatform:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows # Build a Windows standalone.
