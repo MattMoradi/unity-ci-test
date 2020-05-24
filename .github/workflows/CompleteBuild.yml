@@ -15,9 +15,8 @@ jobs:
       fail-fast: false
       matrix:
         projectPath:
-          - test-project
+          - buildme
         unityVersion:
-          - 2019.2.11f1
           - 2019.3.14f1
         targetPlatform:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
