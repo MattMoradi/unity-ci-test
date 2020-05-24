@@ -29,14 +29,18 @@ jobs:
         uses: webbertakken/unity-test-runner@v1.3
         with:
           projectPath: test-project
-          unityVersion: 2019.2.11f1
+          unityVersion: 
+          - 2019.2.11f1
+          - 2019.3.14f1
 
       # Build
       - name: Build project
-        uses: webbertakken/unity-builder@v0.10
+        uses: webbertakken/unity-builder@v1.0
         with:
           projectPath: test-project
-          unityVersion: 2019.2.11f1
+          unityVersion: 
+          - 2019.2.11f1
+          - 2019.3.14f1
           targetPlatform: WebGL
 
       # Output
@@ -59,6 +63,7 @@ jobs:
       matrix:
         unityVersion:
           - 2019.2.11f1
+          - 2019.3.14f1
     steps:
       # Checkout repository
       - uses: actions/checkout@v2
@@ -194,6 +199,7 @@ jobs:
           - test-project
         unityVersion:
           - 2019.2.11f1
+          - 2019.3.14f1
         targetPlatform:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
           - StandaloneWindows64 # Build a Windows 64-bit standalone.
@@ -220,7 +226,7 @@ jobs:
         with:
           name: Test results (all modes)
           path: ${{ steps.testRunner.outputs.artifactsPath }}
-      - uses: webbertakken/unity-builder@v0.10
+      - uses: webbertakken/unity-builder@v1.0
         with:
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
