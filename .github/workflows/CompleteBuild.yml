@@ -41,5 +41,6 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
       - uses: actions/upload-artifact@v1
         with:
-          name: Build
-          path: build
+          name: BuildDirectory
+          path: buildFolder
+          buildName: Downloadable
