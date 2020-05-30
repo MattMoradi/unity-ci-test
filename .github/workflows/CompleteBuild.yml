@@ -36,6 +36,7 @@ jobs:
             Library-
       - uses: webbertakken/unity-builder@v1.0
         with:
+          buildName: TheProject
           projectPath: ${{ matrix.projectPath }}
           unityVersion: ${{ matrix.unityVersion }}
           targetPlatform: ${{ matrix.targetPlatform }}
