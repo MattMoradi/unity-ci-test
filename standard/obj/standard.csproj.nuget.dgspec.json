@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\t_moram\\source\\repos\\standard\\standard.csproj": {}
+    "C:\\Users\\t_moram\\source\\repos\\unity-ci-test\\standard\\standard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\t_moram\\source\\repos\\standard\\standard.csproj": {
+    "C:\\Users\\t_moram\\source\\repos\\unity-ci-test\\standard\\standard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\t_moram\\source\\repos\\standard\\standard.csproj",
+        "projectUniqueName": "C:\\Users\\t_moram\\source\\repos\\unity-ci-test\\standard\\standard.csproj",
         "projectName": "standard",
-        "projectPath": "C:\\Users\\t_moram\\source\\repos\\standard\\standard.csproj",
+        "projectPath": "C:\\Users\\t_moram\\source\\repos\\unity-ci-test\\standard\\standard.csproj",
         "packagesPath": "C:\\Users\\t_moram\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\t_moram\\source\\repos\\standard\\obj\\",
+        "outputPath": "C:\\Users\\t_moram\\source\\repos\\unity-ci-test\\standard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
