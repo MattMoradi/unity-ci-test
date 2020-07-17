@@ -9,17 +9,17 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 2.0
+        dotnet-version: 3.1.101
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build standard/standard.csproj --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test standard/standard.csproj --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity normal
