@@ -7,10 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
+  Build & Test Core:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -23,6 +21,15 @@ jobs:
       run: dotnet build core/core.csproj --configuration Release --no-restore
     - name: Test Core
       run: dotnet test core/core.csproj --no-restore --verbosity normal
+      
+  Build & Test Standard:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
     - name: Install Standard Dependencies
       run: dotnet restore standard/standard.csproj
     - name: Build Standard
