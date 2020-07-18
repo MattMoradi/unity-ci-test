@@ -7,7 +7,8 @@ on:
     branches: [ master ]
 
 jobs:
-  Build and Test Core:
+  buildAndTestCore:
+    name: Build & Test Core
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +23,8 @@ jobs:
     - name: Test Core
       run: dotnet test core/core.csproj --no-restore --verbosity normal
       
-  Build and Test Standard:
+  buildAndTestStandard:
+    name: Build & Test Standard
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
