@@ -1,9 +1,0 @@
-C:\Users\t_moram\source\repos\standard\bin\Debug\netstandard2.0\standard.deps.json
-C:\Users\t_moram\source\repos\standard\bin\Debug\netstandard2.0\standard.dll
-C:\Users\t_moram\source\repos\standard\bin\Debug\netstandard2.0\standard.pdb
-C:\Users\t_moram\source\repos\standard\obj\Debug\netstandard2.0\standard.csprojAssemblyReference.cache
-C:\Users\t_moram\source\repos\standard\obj\Debug\netstandard2.0\standard.AssemblyInfoInputs.cache
-C:\Users\t_moram\source\repos\standard\obj\Debug\netstandard2.0\standard.AssemblyInfo.cs
-C:\Users\t_moram\source\repos\standard\obj\Debug\netstandard2.0\standard.csproj.CoreCompileInputs.cache
-C:\Users\t_moram\source\repos\standard\obj\Debug\netstandard2.0\standard.dll
-C:\Users\t_moram\source\repos\standard\obj\Debug\netstandard2.0\standard.pdb
