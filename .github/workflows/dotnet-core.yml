@@ -6,7 +6,23 @@ on:
   pull_request:
     branches: [ master ]
 
-jobs:
+jobs:  
+  buildSolution:
+    name: Build & Test Solution
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: Install Core Dependencies
+      run: dotnet restore standard/standard.sln
+    - name: Build Core
+      run: dotnet build standard/standard.sln --configuration Release --no-restore
+    - name: Test Core
+      run: dotnet test standard/standard.sln --no-restore --verbosity normal
+      
   buildAndTestCore:
     name: Build & Test Core
     runs-on: ubuntu-latest
@@ -17,11 +33,11 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install Core Dependencies
-      run: dotnet restore core/core.csproj
+      run: dotnet restore standard/core/core.csproj
     - name: Build Core
-      run: dotnet build core/core.csproj --configuration Release --no-restore
+      run: dotnet build standard/core/core.csproj --configuration Release --no-restore
     - name: Test Core
-      run: dotnet test core/core.csproj --no-restore --verbosity normal
+      run: dotnet test standard/core/core.csproj --no-restore --verbosity normal
       
   buildAndTestStandard:
     name: Build & Test Standard
@@ -33,8 +49,8 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install Standard Dependencies
-      run: dotnet restore standard/standard.csproj
+      run: dotnet restore standard/standard/standard.csproj
     - name: Build Standard
-      run: dotnet build standard/standard.csproj --configuration Release --no-restore
+      run: dotnet build standard/standard/standard.csproj --configuration Release --no-restore
     - name: Test Standard
-      run: dotnet test standard/standard.csproj --no-restore --verbosity normal
+      run: dotnet test standard/standard/standard.csproj --no-restore --verbosity normal
